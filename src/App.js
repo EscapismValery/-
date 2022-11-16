@@ -3,14 +3,20 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import React, { useState } from 'react';
-import './App.css';
+import './App.scss';
 
-import mainMK from './images/main.jpg';
-import houses from './images/houses.jpg';
-import icecream from './images/icecream.jpg';
-import process1 from './images/process1.jpg';
-import drink from './images/drink.jpg';
-
+import kishLoren from './images/mk/kish-loren.JPG';
+import craftCookie from './images/mk/craft-cookie.JPG';
+import lolipops from './images/mk/lolipops.JPG';
+import gingerbread from './images/mk/gingerbread.JPG';
+import muffin from './images/mk/muffin.JPG';
+import house from './images/mk/house.JPG';
+import iceCream from './images/mk/ice-cream.JPG';
+import choco from './images/mk/choco.JPG';
+import cakePops from './images/mk/cake-pops.JPG';
+import cottonCandy from './images/mk/cotton-candy.JPG';
+import limonade from './images/mk/limonade.JPG';
+import butter from './images/mk/butter.JPG';
 
 function App() {
 
@@ -47,41 +53,51 @@ function App() {
 						spaceBetween: 20 // расстояние между слайдами
 					},
 					680: { // от 680
+						slidesPerView: 2.5, // количество слайдов на 1 странице
+						spaceBetween: 30 // расстояние между слайдами
+					},
+					1020: { // от 680
 						slidesPerView: 3.5, // количество слайдов на 1 странице
 						spaceBetween: 60 // расстояние между слайдами
 					}
 				}}
 			>
 				<div className='slider__wrapper swiper-wrapper'>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${mainMK})` }}></div>
+					<SwiperSlide className='slider__item'>КИШ Лорен
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${kishLoren})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${houses})` }}></div>
+					<SwiperSlide className='slider__item'>Крафт печенье
+						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${craftCookie})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${icecream})` }}></div>
+					<SwiperSlide className='slider__item'>Леденцы и карамельки
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${lolipops})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${process1})` }}></div>
+					<SwiperSlide className='slider__item'>Пряни козули жамки
+						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${gingerbread})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${drink})` }}></div>
+					<SwiperSlide className='slider__item'>Маффин кекс Штоллен
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${muffin})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${mainMK})` }}></div>
+					<SwiperSlide className='slider__item'>Пряничный дом
+						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${house})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${mainMK})` }}></div>
+					<SwiperSlide className='slider__item'>Мягкое мороженое
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${iceCream})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${mainMK})` }}></div>
+					<SwiperSlide className='slider__item'>Шоколадная фабрика
+						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${choco})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${mainMK})` }}></div>
+					<SwiperSlide className='slider__item'>Кейк-попс
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${cakePops})` }}></div>
 					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${mainMK})` }}></div>
+					<SwiperSlide className='slider__item'>Сахарная вата
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${cottonCandy})` }}></div>
+					</SwiperSlide>
+					<SwiperSlide className='slider__item'>Лимонады и шейки
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${limonade})` }}></div>
+					</SwiperSlide>
+					<SwiperSlide className='slider__item'>Крафтовое масло
+						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${butter})` }}></div>
 					</SwiperSlide>
 				</div>
 			</Swiper>
@@ -97,44 +113,57 @@ function App() {
 						spaceBetween: 20 // расстояние между слайдами
 					},
 					680: { // от 680
+						slidesPerView: 2.5, // количество слайдов на 1 странице
+						spaceBetween: 30 // расстояние между слайдами
+					},
+					1020: { // от 680
 						slidesPerView: 3.5, // количество слайдов на 1 странице
 						spaceBetween: 60 // расстояние между слайдами
 					}
 				}}
 			>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundColor: '#006400' }}></div>
+				<SwiperSlide className='slider__item'>КИШ Лорен
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${kishLoren})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundColor: '#8B0000' }}></div>2
+				<SwiperSlide className='slider__item'>Крафт печенье
+					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${craftCookie})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundColor: '#D2B48C' }}></div>3
+				<SwiperSlide className='slider__item'>Леденцы и карамельки
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${lolipops})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundColor: '#006400' }}></div>4
+				<SwiperSlide className='slider__item'>Пряни козули жамки
+					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${gingerbread})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundColor: '#8B0000' }}></div>
+				<SwiperSlide className='slider__item'>Маффин кекс Штоллен
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${muffin})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundColor: '#D2B48C' }}></div>
+				<SwiperSlide className='slider__item'>Пряничный дом
+					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${house})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundColor: '#006400' }}></div>
+				<SwiperSlide className='slider__item'>Мягкое мороженое
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${iceCream})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundColor: '#8B0000' }}></div>
+				<SwiperSlide className='slider__item'>Шоколадная фабрика
+					<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${choco})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundColor: '#D2B48C' }}></div>
+				<SwiperSlide className='slider__item'>Кейк-попс
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${cakePops})` }}></div>
 				</SwiperSlide>
-				<SwiperSlide className='slider__item'>
-					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundColor: '#006400' }}></div>
+				<SwiperSlide className='slider__item'>Сахарная вата
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${cottonCandy})` }}></div>
+				</SwiperSlide>
+				<SwiperSlide className='slider__item'>Лимонады и шейки
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${limonade})` }}></div>
+				</SwiperSlide>
+				<SwiperSlide className='slider__item'>Крафтовое масло
+					<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${butter})` }}></div>
 				</SwiperSlide>
 			</Swiper>
 
-			<button className="button">Заказать</button>
+			<div className="contacts">
+				<a className="phone" href="tel:+79126164068">+7(912)616-40-68</a>
+				<button className="button">Заказать</button>
+			</div>
 		</div >
 	);
 }
