@@ -1,3 +1,4 @@
+@import "./mixins.scss";
 @font-face {
 	font-family: raleway_m;
 	src: url(./fonts/raleway-v22-cyrillic-300.woff2);
@@ -7,11 +8,6 @@
 	font-family: raleway_m;
 	src: url(./fonts/raleway-v22-cyrillic-900.woff2);
 	font-weight: 900;
-}
-$maxWidth: 1920;
-@mixin adaptive($property, $startSize, $minSize) {
-	$addSize: $startSize - $minSize;
-	#{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth - 320}));
 }
 :root {
 	--dark: #070707;
@@ -59,6 +55,21 @@ body {
 	transition: var(--transition) !important;
 	will-change: transform;
 }
+.slider__img p {
+	display: flex;
+	padding: 20px 0 0 25%;
+	width: 60%;
+	@include adaptive('font-size', 50, 25, 'px');
+	@include adaptive('line-height', 50, 25, 'px');
+	font-weight: 900;
+	color: rgba(255,255,255,0.6);
+	transition: all var(--transition);
+	text-transform: uppercase;
+}
+.slider__img:hover p {
+	color: #fff;
+	text-shadow: 0px 0px 10px #fff;
+}
 .slider-bg {
 	z-index: 0;
 	transform: rotate(-20deg) !important;
@@ -79,16 +90,16 @@ body {
 
 .description {
 	position: absolute;
-	@include adaptive('font-size', 23, 12);
+	@include adaptive('font-size', 23, 2, 'px');
 	top: 15vh;
 	left: 8vw;
 	max-width: 24vw;
 	transition: opacity var(--transition), transform var(--transition);
 }
 .logo {
-	@include adaptive('font-size', 69, 16);
-	@include adaptive('line-height', 69, 16);
-	@include adaptive('margin-bottom', 30, 20);
+	@include adaptive('font-size', 69, 2, 'px');
+	@include adaptive('line-height', 69, 2, 'px');
+	@include adaptive('margin-bottom', 30, 20, 'px');
 	font-weight: 900;
 	display: inline-block;
 	background: linear-gradient(45deg, #C08E45, #8b0000, #d2b48c);
@@ -105,15 +116,15 @@ body {
 .newyear {
 	display: flex;
 	align-items: center;
-	@include adaptive('gap', 20, 8);
+	@include adaptive('gap', 20, 8, 'px');
 	color: #ffe4c4;
 	margin: 5px 0;
 }
 .santa {
 	background: url("./images/santa.png") no-repeat 0% 50%;
 	background-size: 100%;
-	width: 150px;
-	height: 150px;
+	@include adaptive('width', 150, 50, 'px');
+	@include adaptive('height', 150, 50, 'px');
 	animation: santa 5s linear infinite;
 }
 .description .dad {
@@ -136,155 +147,42 @@ body {
 }
 .contacts {
 	position: absolute;
-	@include adaptive('top', 60, 20);
+	@include adaptive('top', 60, 20, 'px');
 	right: 7vw;
 	display: flex;
 	align-items: center;
-	@include adaptive('gap', 20, 10);
+	@include adaptive('gap', 20, 10, 'px');
 }
 .button {
 	// position: absolute;
 	// @include adaptive('top', 60, 20);
 	// right: 10vw;
-	@include adaptive('padding-top', 20, 10);
-	@include adaptive('padding-bottom', 20, 10);
-	@include adaptive('padding-left', 50, 20);
-	@include adaptive('padding-right', 50, 20);
-	background: transparent;
-	border: 1px solid #ffe4c4;
+	@include adaptive('padding-top', 20, 10, 'px');
+	@include adaptive('padding-bottom', 20, 10, 'px');
+	@include adaptive('padding-left', 50, 20, 'px');
+	@include adaptive('padding-right', 50, 20, 'px');
+	background: #B71B1C;
+	border: 1px solid #B71B1C;
 	border-radius: 50px;
 	font-family: raleway_m, sans-serif;
 	color: #ffe4c4;
-	@include adaptive('font-size', 24, 16);
+	@include adaptive('font-size', 24, 16, 'px');
 	cursor: pointer;
 	transition: all var(--transition);
 	animation: buttons 5s linear infinite;
 }
 .button:hover {
-	@include adaptive('padding-left', 60, 30);
-	@include adaptive('padding-right', 60, 30);
+	@include adaptive('padding-left', 60, 30, 'px');
+	@include adaptive('padding-right', 60, 30, 'px');
 }
 .phone {
 	font-family: raleway_m, sans-serif;
 	color: #ffe4c4;
-	@include adaptive('font-size', 20, 12);
+	@include adaptive('font-size', 20, 12, 'px');
 	text-decoration: none;
 	transition: all var(--transition);
 	animation: phone 5s linear infinite;
 }
 .phone:hover {
 	letter-spacing: 2px;
-}
-
-@media screen and (max-width: 767px) {
-	.slider {
-		top: 50vh;
-		height: 60%;
-		transition: top var(--transition);
-	}
-	.description.hidden ~ .slider {
-		top: 20vh;
-		height: 60%;
-	}
-	.slider__img {
-		width: 200%;
-		background-position: 50% 100%;
-	}
-	.slider-bg {
-		top: -40vh;
-		left: -5vh;
-		opacity: 0.25;
-	}
-	.description {
-		top: 5vh;
-		left: 10%;
-		max-width: 80vw;
-	}
-	.description.hidden {
-		opacity: 1;
-		transform: translateY(0.5vh) scale(0.8);
-	}
-	.logo {
-		opacity: 1;
-		margin-bottom: 50px;
-	}
-	.description.hidden .logo{
-		opacity: 0.2;
-	}
-	.description.hidden p{
-		opacity: 0.1;
-	}
-	.description.hidden p {
-		transform: translateY(0.2vh);
-	}
-	.description.hidden .dad {
-		opacity: 1;
-		transform: translateY(0.5vh);
-	}
-	.description .newyear {
-		position: absolute;
-		top: -150px;
-		left: -50px;
-		width: 200px;
-		opacity: 0;
-		transition: all var(--transition);
-		font-size: 14px;
-		align-items: flex-start;
-	}
-	.santa {
-		max-height: 50px;
-	}
-	.description.hidden .newyear {
-		opacity: 1;
-		position: absolute;
-		top: -50px;
-		left: -50px;
-	}
-	.contacts {
-		right: 7vw;
-		display: flex;
-		flex-direction: column-reverse;
-		align-items: center;
-		@include adaptive('gap', 20, 10);
-	}
-}
-
-@keyframes santa {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-@keyframes buttons {
-	0% {
-		transform: scale(1);
-	}
-	85% {
-		transform: scale(1);
-	}
-	90% {
-		transform: scale(1.2);
-	}
-	95% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-@keyframes phone {
-	0% {
-		transform: scale(1);
-	}
-	90% {
-		transform: scale(1);
-	}
-	95% {
-		transform: scale(1.1);
-	}
-	100% {
-		transform: scale(1);
-	}
 }

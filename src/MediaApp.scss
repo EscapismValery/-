@@ -1,0 +1,136 @@
+@import "./mixins.scss";
+@media screen and (max-width: 767px) {
+	.slider {
+		@include adaptive('top', 150, 370, 'px');
+		margin: 0 10vw;
+		height: 60%;
+		transition: top var(--transition);
+		transform: rotate(0deg);
+	}
+	.description.hidden ~ .slider {
+		top: 20vh;
+		left: 35vw;
+		// margin-right: 35vw;
+		height: 60%;
+	}
+	.description.hidden ~ .slider-bg {
+		top: -80vh;
+		left: -5vh;
+		opacity: 0.45;
+	}
+	.slider__img {
+		width: 120%;
+		background-position: 50% 100%;
+	}
+	.slider__img p {
+		padding: 10px 0 0 25%;
+		font-weight: 900;
+		color: rgba(255,255,255,0.6);
+		transition: all var(--transition);
+	}
+	.slider__img:hover p {
+		color: #fff;
+		text-shadow: 0px 0px 10px #fff;
+	}
+	.slider-bg {
+		top: -40vh;
+		left: -5vh;
+		opacity: 0.45;
+	}
+	.description {
+		top: 5vh;
+		left: 10%;
+		max-width: 80vw;
+		@include adaptive('font-size', 23, 14, 'px');
+	}
+	.description.hidden {
+		opacity: 1;
+		transform: translateY(0.5vh) scale(0.8);
+	}
+	.logo {
+		@include adaptive('font-size', 69, 16, 'px');
+		@include adaptive('line-height', 69, 16, 'px');
+		opacity: 1;
+		margin-bottom: 50px;
+	}
+	.description.hidden .logo{
+		opacity: 0.2;
+	}
+	.description.hidden p{
+		opacity: 0.1;
+	}
+	.description.hidden p {
+		transform: translateY(0.2vh);
+	}
+	.description.hidden .dad {
+		opacity: 1;
+		transform: translateY(0.5vh);
+	}
+	.description .newyear {
+		position: absolute;
+		top: -150px;
+		left: -50px;
+		width: 200px;
+		opacity: 0;
+		transition: all var(--transition);
+		font-size: 14px;
+		align-items: flex-start;
+	}
+	.santa {
+		width: 150px;
+		height: 50px;
+	}
+	.description.hidden .newyear {
+		opacity: 1;
+		position: absolute;
+		top: -50px;
+		left: -50px;
+	}
+	.contacts {
+		right: 7vw;
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: center;
+		@include adaptive('gap', 20, 10, 'px');
+	}
+}
+
+@keyframes santa {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+@keyframes buttons {
+	0% {
+		transform: scale(1);
+	}
+	85% {
+		transform: scale(1);
+	}
+	90% {
+		transform: scale(1.2);
+	}
+	95% {
+		transform: scale(1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+@keyframes phone {
+	0% {
+		transform: scale(1);
+	}
+	90% {
+		transform: scale(1);
+	}
+	95% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
