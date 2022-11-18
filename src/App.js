@@ -18,12 +18,30 @@ import cakePops from './images/mk/cake-pops.JPG';
 import cottonCandy from './images/mk/cotton-candy.JPG';
 import limonade from './images/mk/limonade.JPG';
 import butter from './images/mk/butter.JPG';
+import Modal from './modal/Modal';
 
 function App() {
-
+	const [modalActive, setModalActive] = useState(false);
+	const [mkTitle, setMkTitle] = useState('');
+	const [mkDesc, setMkDesc] = useState('');
+	// const masterClasses = [
+	// 	{
+	// 		id: 1,
+	// 		name: 'КИШ Лорен',
+	// 		description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci, distinctio.',
+	// 		time: 45,
+	// 		people: 30,
+	// 		yearPeople: 5,
+	// 	}
+	// ];
 	const [controlledSwiper, setControlledSwiper] = useState(null);
 	const desc = document.querySelector(".description");
-
+	const popup = (e, desc) => {
+		console.log(e);
+		setModalActive(true)
+		setMkTitle(e.target.innerText);
+		setMkDesc(desc);
+	}
 	return (
 		<div className="App">
 			<div className="description">
@@ -66,62 +84,110 @@ function App() {
 			>
 				<div className='slider__wrapper swiper-wrapper'>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${kishLoren})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Готовим французский слоёный тарт')}
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${kishLoren})` }}>
 							<p>КИШ Лорен</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${craftCookie})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Печеньки, печеньки, печеньки!')}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${craftCookie})` }}>
 							<p>Крафт печенье</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${lolipops})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Спиральки, кружочки – создайте свою неповторимую конфетку – вкусную и аппетитную!')}
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${lolipops})` }}>
 							<p>Леденцы и карамельки</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${gingerbread})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Работа с разноцветными глазурями и посыпками повышает настроение за считанные секунды!')}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${gingerbread})` }}>
 							<p>Пряни козули жамки</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${house})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Мастер-класс по украшению пряничных домиков создаст особое праздничное новогоднее настроение!')}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${house})` }}>
 							<p>Пряничный дом</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${muffin})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Всё-таки Маффин или Кекс? А что такое Штоллен?')}
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${muffin})` }}>
 							<p>Маффин кекс Штоллен</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${iceCream})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, '«Сыт — весел, а голоден — нос повесил»')}
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${iceCream})` }}>
 							<p>Мягкое мороженое</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${choco})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Мастер-класс по созданию шоколадных конфет придется по вкусу всем сладкоежкам!')}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${choco})` }}>
 							<p>Шоколадная фабрика</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${cakePops})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Кейк попсы – это вкусные десерты, в которые влюбляются с первого взгляда!')}
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${cakePops})` }}>
 							<p>Кейк-попс</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${cottonCandy})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Очень хочется, чтобы скорей-скорей накрутилось эта белоснежная вкусняшка на палочку!')}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${cottonCandy})` }}>
 							<p>Сахарная вата</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="20%" style={{ backgroundImage: `url(${limonade})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Приготовление фрешей, смузи, молочных и других безалкогольных коктейлей и лимонадов!')}
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${limonade})` }}>
 							<p>Лимонады и шейки</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
-						<div className="slider__img" data-swiper-parallax="30%" style={{ backgroundImage: `url(${butter})` }}>
+						<div
+							className="slider__img"
+							onClick={(e) => popup(e, 'Создание ароматизированного масла с прованскими травами!')}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${butter})` }}>
 							<p>Крафтовое масло</p>
 						</div>
 					</SwiperSlide>
@@ -193,6 +259,11 @@ function App() {
 				<a className="phone" href="tel:+79126164068">+7(912)616-40-68</a>
 				<button className="button">Заказать</button>
 			</div>
+
+			<Modal active={modalActive} setActive={setModalActive}>
+				<h3 className="modal__title">{mkTitle}</h3>
+				<p className='modal__desc'>{mkDesc}</p>
+			</Modal>
 		</div >
 	);
 }

@@ -34,6 +34,7 @@ body {
 	transform: rotate(15deg);
 	overflow: visible;
 	top: 10vh;
+	will-change: transform, top, left;
 }
 .swiper-wrapper {
 	transition: var(--transition) !important;
@@ -77,6 +78,7 @@ body {
 	left: -5vh;
 	opacity: 0.45;
 	filter: saturate(10) blur(90px);
+	will-change: top, left;
 }
 .slider-bg .slider__item {
 	max-height: 100vh;
@@ -154,9 +156,6 @@ body {
 	@include adaptive('gap', 20, 10, 'px');
 }
 .button {
-	// position: absolute;
-	// @include adaptive('top', 60, 20);
-	// right: 10vw;
 	@include adaptive('padding-top', 20, 10, 'px');
 	@include adaptive('padding-bottom', 20, 10, 'px');
 	@include adaptive('padding-left', 50, 20, 'px');

@@ -1,0 +1,136 @@
+@import "../mixins.scss";
+.modal {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgba(0,0,0,0.4);
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	pointer-events: none;
+	transition: .5s;
+}
+.modal.active {
+	opacity: 1;
+	pointer-events: all;
+}
+.modal__content {
+	padding: 20px;
+	border-radius: 15px 15px 50px 50px;
+	background: rgba(0,0,0,.8);
+	transform: scale(0.5);
+	opacity: 0.9;
+	transition: .5s;
+	display: flex;
+	flex-direction: column;
+	gap: 40px;
+	width: 40vw;
+}
+.modal__content.active {
+	transform: scale(1);
+}
+.modal__title {
+	@include adaptive('font-size', 50, 25, 'px');
+	@include adaptive('line-height', 50, 25, 'px');
+	font-weight: 900;
+	color: rgba(255,255,255,0.4);
+	transition: all var(--transition);
+	text-transform: uppercase;
+	z-index: 3;
+}
+.modal__desc {
+	@include adaptive('font-size', 27, 2, 'px');
+	@include adaptive('line-height', 27, 2, 'px');
+	color: #fff;
+	z-index: 3;
+}
+.modal__more {
+	width: 20%;
+	display: flex;
+	justify-content: flex-start;
+	background: none;
+	border: none;
+	color: rgba(255,255,255,0.4);
+	@include adaptive('font-size', 20, 2, 'px');
+	@include adaptive('line-height', 20, 2, 'px');
+	cursor: pointer;
+	margin-top: -20px;
+}
+.modal__more:hover {
+	text-decoration: underline;
+}
+.modal__close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: flex;
+	justify-content: flex-start;
+	background: none;
+	border: none;
+	color: rgba(255,255,255,0.4);
+	@include adaptive('font-size', 40, 2, 'px');
+	@include adaptive('line-height', 40, 2, 'px');
+	cursor: pointer;
+	z-index: 10;
+}
+.modal__close:hover {
+	color: rgba(255,255,255,0.8);
+}
+.modal__buttons {
+	display: flex;
+	justify-content: space-between;
+}
+.modal__button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 10px 10px;
+	width: 48%;
+	background-color: #8b0000;
+	border-radius: 50px;
+	color: #d2b48c;
+	text-decoration: none;
+	@include adaptive('font-size', 27, 2, 'px');
+	@include adaptive('line-height', 27, 2, 'px');
+	transition: background var(--transition);
+}
+.modal__button:hover {
+	background-color: #ac0000;
+}
+@media screen and (max-width: 767px) {
+	.modal__content {
+		border-radius: 15px 15px 50px 50px;
+		gap: 30px;
+		width: 90vw;
+		margin-bottom: -50px;
+	}
+	.modal__desc {
+		@include adaptive('font-size', 27, 14, 'px');
+		@include adaptive('line-height', 27, 18, 'px');
+	}
+	.modal__more {
+		width: 30%;
+		@include adaptive('font-size', 20, 12, 'px');
+		@include adaptive('line-height', 20, 12, 'px');
+	}
+	.modal__close {
+		@include adaptive('font-size', 40, 30, 'px');
+		@include adaptive('line-height', 40, 30, 'px');
+	}
+	.modal__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		justify-content: space-between;
+	}
+	.modal__button {
+		width: 100%;
+		@include adaptive('font-size', 27, 18, 'px');
+		@include adaptive('line-height', 27, 18, 'px');
+	}
+}

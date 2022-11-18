@@ -10,13 +10,11 @@
 	.description.hidden ~ .slider {
 		top: 20vh;
 		left: 35vw;
-		// margin-right: 35vw;
 		height: 60%;
 	}
 	.description.hidden ~ .slider-bg {
 		top: -80vh;
 		left: -5vh;
-		opacity: 0.45;
 	}
 	.slider__img {
 		width: 120%;
@@ -35,13 +33,13 @@
 	.slider-bg {
 		top: -40vh;
 		left: -5vh;
-		opacity: 0.45;
 	}
 	.description {
 		top: 5vh;
 		left: 10%;
 		max-width: 80vw;
 		@include adaptive('font-size', 23, 14, 'px');
+		will-change: transform, opacity;
 	}
 	.description.hidden {
 		opacity: 1;
@@ -75,6 +73,7 @@
 		transition: all var(--transition);
 		font-size: 14px;
 		align-items: flex-start;
+		will-change: opacity, top, left;
 	}
 	.santa {
 		width: 150px;
