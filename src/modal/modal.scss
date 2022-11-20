@@ -165,6 +165,9 @@
 			text-align: left;
 		}
 	}
+	.modal-more.modal__content {
+		margin-bottom: 0px;
+	}
 	.modal__desc {
 		@include adaptive('font-size', 27, 14, 'px');
 		@include adaptive('line-height', 27, 18, 'px');
