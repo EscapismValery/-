@@ -28,6 +28,7 @@
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
+	max-height: 90vh;
 	width: 40vw;
 }
 .modal__content.active {
@@ -75,10 +76,13 @@
 	@include adaptive('font-size', 40, 2, 'px');
 	@include adaptive('line-height', 40, 2, 'px');
 	cursor: pointer;
-	z-index: 10;
+	z-index: 5;
 }
 .modal__close:hover {
 	color: rgba(255,255,255,0.8);
+}
+.modal-more .modal__close {
+	color: rgba(0, 0, 0, 0.6);
 }
 .modal__buttons {
 	display: flex;
@@ -98,9 +102,53 @@
 	@include adaptive('font-size', 27, 2, 'px');
 	@include adaptive('line-height', 27, 2, 'px');
 	transition: background var(--transition);
+	cursor: pointer;
 }
-.modal__button:hover {
+.modal__button:hover, .form__button:hover {
 	background-color: #ac0000;
+}
+.modal-more {
+		padding: 40px 50px;
+		gap: 20px;
+		background: rgb(255, 255, 255);
+		border-radius: 15px 0px 0px 15px;
+		width: 60vw;
+		overflow-y: auto;
+		color: rgba(0,0,0,.8);
+		opacity: 1;
+	&__title {
+		@include adaptive('font-size', 50, 25, 'px');
+		@include adaptive('line-height', 50, 25, 'px');
+		font-weight: 900;
+		color: rgba(255,255,255,0.4);
+		transition: all var(--transition);
+		text-transform: uppercase;
+		z-index: 3;
+		color: #D93666;
+	}
+	p {
+		@include adaptive('font-size', 24, 14, 'px');
+		@include adaptive('line-height', 28, 16, 'px');
+		letter-spacing: 1.1;
+		text-align: justify;
+		padding: 5px 0;
+	}
+	span {
+		font-weight: 700;
+		color: #D93666;
+	}
+	&__subtitle {
+		@include adaptive('font-size', 24, 14, 'px');
+		@include adaptive('line-height', 30, 18, 'px');
+		font-weight: 700;
+		color: #D93666;
+	}
+	&__item {
+		@include adaptive('font-size', 24, 14, 'px');
+		@include adaptive('line-height', 30, 18, 'px');
+		margin-left: 20px;
+		text-align: justify;
+	}
 }
 @media screen and (max-width: 767px) {
 	.modal__content {
@@ -108,6 +156,14 @@
 		gap: 30px;
 		width: 90vw;
 		margin-bottom: -50px;
+	}
+	.modal-more {
+		gap: 10px;
+		padding: 30px;
+		border-radius: 15px;
+		&__item {
+			text-align: left;
+		}
 	}
 	.modal__desc {
 		@include adaptive('font-size', 27, 14, 'px');
@@ -128,8 +184,9 @@
 		gap: 10px;
 		justify-content: space-between;
 	}
-	.modal__button {
+	.modal__button, .form__button {
 		width: 100%;
+		@include adaptive('height', 54, 56, 'px');
 		@include adaptive('font-size', 27, 18, 'px');
 		@include adaptive('line-height', 27, 18, 'px');
 	}

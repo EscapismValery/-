@@ -165,7 +165,9 @@ body {
 	border-radius: 50px;
 	font-family: raleway_m, sans-serif;
 	color: #ffe4c4;
+	text-decoration: none;
 	@include adaptive('font-size', 24, 16, 'px');
+	line-height: 1;
 	cursor: pointer;
 	transition: all var(--transition);
 	animation: buttons 5s linear infinite;

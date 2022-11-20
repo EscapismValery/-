@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/vkysniymaster/static/css/main.da839700.css",
-    "main.js": "/vkysniymaster/static/js/main.f9816a1e.js",
+    "main.css": "/vkysniymaster/static/css/main.ea389596.css",
+    "main.js": "/vkysniymaster/static/js/main.263c0c12.js",
     "static/media/muffin.JPG": "/vkysniymaster/static/media/muffin.f12e656bac4ff3435aea.JPG",
     "static/media/gingerbread.JPG": "/vkysniymaster/static/media/gingerbread.cb066c03c7b760d9956a.JPG",
     "static/media/craft-cookie.JPG": "/vkysniymaster/static/media/craft-cookie.e68380debe37aa8b0c44.JPG",
-    "static/media/choco.JPG": "/vkysniymaster/static/media/choco.9b5d826b0d26e3b105e0.JPG",
     "static/media/house.JPG": "/vkysniymaster/static/media/house.fd3d226f1846e680af1a.JPG",
     "static/media/cake-pops.JPG": "/vkysniymaster/static/media/cake-pops.2e441ed77bf44771b8a1.JPG",
+    "static/media/choco2.jpg": "/vkysniymaster/static/media/choco2.35d20774d86fcf3160a4.jpg",
     "static/media/ice-cream.JPG": "/vkysniymaster/static/media/ice-cream.d2f662f333cde836b3fb.JPG",
     "static/media/kish-loren.JPG": "/vkysniymaster/static/media/kish-loren.226cee3553495e49aa0c.JPG",
     "static/media/cotton-candy.JPG": "/vkysniymaster/static/media/cotton-candy.9ac1689ad7fdd0d0f8d0.JPG",
@@ -18,11 +18,11 @@
     "static/media/raleway-v22-cyrillic-300.woff2": "/vkysniymaster/static/media/raleway-v22-cyrillic-300.6a0528b403942983a68b.woff2",
     "static/media/raleway-v22-cyrillic-900.woff2": "/vkysniymaster/static/media/raleway-v22-cyrillic-900.797b5998b7dd5967c115.woff2",
     "index.html": "/vkysniymaster/index.html",
-    "main.da839700.css.map": "/vkysniymaster/static/css/main.da839700.css.map",
-    "main.f9816a1e.js.map": "/vkysniymaster/static/js/main.f9816a1e.js.map"
+    "main.ea389596.css.map": "/vkysniymaster/static/css/main.ea389596.css.map",
+    "main.263c0c12.js.map": "/vkysniymaster/static/js/main.263c0c12.js.map"
   },
   "entrypoints": [
-    "static/css/main.da839700.css",
-    "static/js/main.f9816a1e.js"
+    "static/css/main.ea389596.css",
+    "static/js/main.263c0c12.js"
   ]
 }
