@@ -1,14 +1,17 @@
 @import "./mixins.scss";
 @media screen and (max-width: 767px) {
 	.slider {
-		@include adaptive('top', 150, 370, 'px');
+		@include adaptive('top', 150, 300, 'px');
 		margin: 0 10vw;
 		height: 60%;
 		transition: top var(--transition);
 		transform: rotate(0deg);
+		@media screen and (max-width: 540px) {
+			@include adaptive('top', 150, 240, 'px');
+		}
 	}
 	.description.hidden ~ .slider {
-		top: 20vh;
+		@include adaptive('top', 150, 120, 'px');
 		left: 35vw;
 		height: 60%;
 	}
@@ -20,81 +23,128 @@
 		width: 120%;
 		background-position: 50% 100%;
 	}
-	.slider__img p {
-		padding: 10px 0 0 25%;
+	.slider__item p {
+		padding: 10px 50% 10px 10px;
 		font-weight: 900;
 		transition: all var(--transition);
 		color: #fff;
 		text-shadow: 0px 0px 10px rgb(192, 192, 192);
 	}
-	.slider__img:hover p {
+	.slider__item:hover p {
 		color: #fff;
 		text-shadow: 0px 0px 10px rgb(192, 192, 192);
+	}
+	.slider__item .slider__korporat {
+		font-size: 1em;
+		line-height: 1em;
 	}
 	.slider-bg {
 		top: -40vh;
 		left: -5vh;
 	}
+	//----------------------------------------------------------------------------------------------
 	.description {
+		justify-content: flex-start;
 		top: 5vh;
-		left: 10%;
+		left: 10vw;
+		transition: opacity var(--transition), transform var(--transition);
 		max-width: 80vw;
 		@include adaptive('font-size', 23, 14, 'px');
 		will-change: transform, opacity;
+		&__logo {
+			@include adaptive('font-size', 69, 16, 'px');
+			@include adaptive('line-height', 69, 16, 'px');
+			opacity: 1;
+			margin-bottom: 20px;
+		}
+		&__text {
+			font-weight: 500;
+			line-height: 1.3em;
+		}
 	}
-	.description.hidden {
-		opacity: 1;
-		transform: translateY(0.5vh) scale(0.8);
-	}
-	.logo {
-		@include adaptive('font-size', 69, 16, 'px');
-		@include adaptive('line-height', 69, 16, 'px');
-		opacity: 1;
-		margin-bottom: 50px;
-	}
-	.description.hidden .logo{
-		opacity: 0.2;
-	}
-	.description.hidden p{
-		opacity: 0.1;
-	}
-	.description.hidden p {
-		transform: translateY(0.2vh);
-	}
-	.description.hidden .dad {
-		opacity: 1;
-		transform: translateY(0.5vh);
-	}
-	.description .newyear {
-		position: absolute;
-		top: -150px;
-		left: -50px;
-		width: 200px;
-		opacity: 0;
-		transition: all var(--transition);
-		font-size: 14px;
-		align-items: flex-start;
-		will-change: opacity, top, left;
-	}
-	.santa {
-		width: 150px;
-		height: 50px;
-	}
-	.description.hidden .newyear {
-		opacity: 1;
-		position: absolute;
-		top: -50px;
-		left: -50px;
-	}
-	.contacts {
-		right: 7vw;
-		display: flex;
-		flex-direction: column-reverse;
+	.newyear {
+		width: 100%;
+		height: 40px;
+		left: -100vw;
+		top: 60px;
+		bottom: none;
 		align-items: center;
-		@include adaptive('gap', 20, 10, 'px');
+		transition: left var(--transition);
+		will-change: left;
+		&__santa {
+			background: url("./images/santa.png") no-repeat 0% 50%;
+			background-size: 100%;
+			@include adaptive('width', 100, 50, 'px');
+			@include adaptive('height', 100, 50, 'px');
+			animation: santa 5s linear infinite;
+		}
+		&__text {
+			@include adaptive('font-size', 23, 14, 'px');
+			@include adaptive('line-height', 27, 14, 'px');
+			width: 80%;
+		}
+		@media screen and (max-width: 319px) {
+			margin: 15px 0;
+			font-size: 12px;
+			top: 5px;
+			flex-direction: column;
+			gap: 3px;
+			&__santa {
+				display: none;
+			}
+			&__text {
+				font-size: 12px;
+				line-height: 12px;
+			}
+		}
+		&__button {
+			max-width: 240px;
+		}
+	}
+
+	.description.hidden {
+		opacity: 0.2;
+		transform: translateY(0.5vh) scale(0.8);
+		.logo {
+			opacity: 0.1;
+		}
+		&__text {
+			opacity: 0.1;
+			transform: translateY(0.2vh);
+		}
+		& ~ .newyear {
+			top: 60px;
+			opacity: 1;
+			left: 2vw;
+			@media screen and (max-width: 319px) {
+				left: 0;
+			}
+		}
+		& ~ .contacts {
+			right: 0;
+			@media screen and (max-width: 319px) {
+				top: 5px;
+				flex-direction: column;
+				gap: 3px;
+			}
+		}
+	}
+
+//--------------------------------------------------------------------------------------
+	.contacts {
+		top: 10px;
+		right: -100vw;
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+	.phone:hover {
+		letter-spacing: 1px;
 	}
 }
-
+// -----------------------animation----------------------------
 @keyframes santa {
 	0% {
 		transform: rotate(0deg);
@@ -111,24 +161,10 @@
 		transform: scale(1);
 	}
 	90% {
-		transform: scale(1.2);
-	}
-	95% {
-		transform: scale(1);
-	}
-	100% {
-		transform: scale(1);
-	}
-}
-@keyframes phone {
-	0% {
-		transform: scale(1);
-	}
-	90% {
-		transform: scale(1);
-	}
-	95% {
 		transform: scale(1.1);
+	}
+	95% {
+		transform: scale(1);
 	}
 	100% {
 		transform: scale(1);

@@ -1,12 +1,10 @@
 import { Mousewheel, Parallax, FreeMode, Controller } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import 'swiper/css';
 import React, { useState } from 'react';
+import { masterClasses } from './js/mk.js'
+import 'swiper/css';
 import './App.scss';
 import './MediaApp.scss';
-
-import { masterClasses } from './js/mk.js'
 
 import kishLoren from './images/mk/kish-loren.JPG';
 import craftCookie from './images/mk/craft-cookie.JPG';
@@ -20,12 +18,17 @@ import cakePops from './images/mk/cake-pops.JPG';
 import cottonCandy from './images/mk/cotton-candy.JPG';
 import limonade from './images/mk/limonade.JPG';
 import butter from './images/mk/butter.JPG';
+import korporat from './images/mk/korporat.JPG';
+
 import Modal from './modal/Modal';
+import DescriptionMain from './components/DescriptionMain.jsx';
+import Contacts from './components/Contacts.jsx';
+import NewYear from './components/NewYear.jsx';
 
 function App() {
+	const [controlledSwiper, setControlledSwiper] = useState(null);
 	const [modalActive, setModalActive] = useState(false);
 	const [moreActive, setMoreActive] = useState(false);
-
 	const [masterClass, setMasterClass] = useState({
 		title: "",
 		minDescription: "",
@@ -38,11 +41,13 @@ function App() {
 		required: [],
 		nuances: [],
 	})
+	const desc = document.querySelector(".description");
 
 	const popup = (desc) => {
 		setModalActive(true)
 		setMasterClass({
 			title: desc.title,
+			price: desc.price,
 			minDescription: desc.minDescription,
 			bigDescription: desc.bigDescription,
 			time: desc.time,
@@ -54,29 +59,13 @@ function App() {
 			nuances: desc.nuances,
 		})
 	}
-
 	const onModalMore = () => {
 		setMoreActive(true)
 	}
 
-	const [controlledSwiper, setControlledSwiper] = useState(null);
-	const desc = document.querySelector(".description");
-
 	return (
 		<div className="App">
-			<div className="description">
-				<h1 className="logo">ВкусныйМастер</h1>
-				<p><span>Мастер-классы</span> с выездом и в нашей мастерской, на которых дети и взрослые, благодаря широкому выбору
-					творческих,
-					кулинарных и других
-					мастер-классов, могут обрести множество умений и навыков, узнать что-то новое и интересное,
-					расширить свой кругозор, провести
-					время весело и проявить свои скрытые таланты!</p>
-				<div className="newyear">
-					<div className="santa"></div>
-					<p className="dad">При заказе мастер-класса в детский сад или школу поздравление от Деда Мороза в подарок!</p>
-				</div>
-			</div>
+			<DescriptionMain />
 
 			<Swiper className="slider"
 				modules={[Mousewheel, Parallax, FreeMode, Controller]}
@@ -105,111 +94,120 @@ function App() {
 			>
 				<div className='slider__wrapper swiper-wrapper'>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[0].title}</p>
 						<div
 							className="slider__img"
 							onClick={() => popup(masterClasses[0])}
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${kishLoren})` }}>
-							<p>{masterClasses[0].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[1].title}</p>
 						<div
 							className="slider__img"
 							onClick={() => popup(masterClasses[1])}
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${craftCookie})` }}>
-							<p>{masterClasses[1].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[2].title}</p>
 						<div
 							className="slider__img"
 							onClick={() => popup(masterClasses[2])}
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${lolipops})` }}>
-							<p>{masterClasses[2].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[3].title}</p>
 						<div
 							className="slider__img"
 							onClick={() => popup(masterClasses[3])}
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${gingerbread})` }}>
-							<p>{masterClasses[3].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[4].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[4])}
+							onClick={() => popup(masterClasses[4])}
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${house})` }}>
-							<p>{masterClasses[4].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[5].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[5])}
+							onClick={() => popup(masterClasses[5])}
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${muffin})` }}>
-							<p>{masterClasses[5].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[6].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[6])}
+							onClick={() => popup(masterClasses[6])}
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${iceCream})` }}>
-							<p>{masterClasses[6].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[7].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[7])}
+							onClick={() => popup(masterClasses[7])}
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${choco})` }}>
-							<p>{masterClasses[7].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[8].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[8])}
+							onClick={() => popup(masterClasses[8])}
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${cakePops})` }}>
-							<p>{masterClasses[8].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[9].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[9])}
+							onClick={() => popup(masterClasses[9])}
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${cottonCandy})` }}>
-							<p>{masterClasses[9].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[10].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[10])}
+							onClick={() => popup(masterClasses[10])}
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${limonade})` }}>
-							<p>{masterClasses[10].title}</p>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
+						<p>{masterClasses[11].title}</p>
 						<div
 							className="slider__img"
-							onClick={(e) => popup(masterClasses[11])}
+							onClick={() => popup(masterClasses[11])}
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${butter})` }}>
-							<p>{masterClasses[11].title}</p>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide className='slider__item'>
+						<p className='slider__korporat'>{masterClasses[12].title}</p>
+						<div
+							className="slider__img"
+							onClick={() => popup(masterClasses[12])}
+							data-swiper-parallax="30%"
+							style={{ backgroundImage: `url(${korporat})` }}>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item'>
@@ -279,35 +277,32 @@ function App() {
 				</SwiperSlide>
 			</Swiper>
 
-			<div className="contacts">
-				<a className="phone" href="tel:+79126164068">+7(912)616-40-68</a>
-				<a
-					className="button"
-					href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+у+Вас+мастер-класс."
-					target="_blank"
-					rel="noreferrer">
-					Заказать
-				</a>
-			</div>
+			<Contacts />
+			<NewYear />
 
 			<Modal active={modalActive} setActive={setModalActive}>
 				<h3 className="modal__title">{masterClass.title}</h3>
 				<p className='modal__desc'>{masterClass.minDescription}</p>
+				<p className='modal__desc'>Стоимость: <br />
+					{masterClass.price?.map((item, index) =>
+						<span key={index}>{item}<br /></span>
+					)}
+				</p>
 				<button className='modal__more' onClick={() => { onModalMore() }}>Подробнее..</button>
 				<div className="modal__buttons">
 					<a
 						className='modal__button'
-						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+доставку+мастер-класса."
+						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+выезд+мастер-класса."
 						target="_blank"
 						rel="noreferrer">
-						Заказать доставку
+						Заказать выезд
 					</a>
 					<a
 						className='modal__button'
-						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+получить+пригласительное+на+мастер-класс."
+						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+мастер-класс+в+мастерской."
 						target="_blank"
 						rel="noreferrer">
-						Получить пригласительное
+						Заказать в мастерской
 					</a>
 				</div>
 			</Modal>
@@ -315,14 +310,7 @@ function App() {
 				<h3 className="modal-more__title">{masterClass.title}</h3>
 				<p className="modal-more__description">{masterClass.bigDescription}</p>
 				<p className="modal-more__time"><span>Время на изготовление:</span> {masterClass.time}</p>
-				<p className="modal-more__people"><span>Средняя проходимость:</span> {masterClass.people}</p>
 				<p className="modal-more__age"><span>Возраст участников:</span> {masterClass.age}</p>
-				<ol className="modal-more__process">
-					<h4 className="modal-more__subtitle">Как проходит мастер-класс:</h4>
-					{masterClass.process.map((item, index) =>
-						<li key={index} className="modal-more__item">{item}</li>
-					)}
-				</ol>
 				<ol className="modal-more__materials">
 					<h4 className="modal-more__subtitle">Какие материалы предоставим мы:</h4>
 					{masterClass.materials.map((item, index) =>
@@ -330,7 +318,7 @@ function App() {
 					)}
 				</ol>
 				<ol className="modal-more__requirements">
-					<h4 className="modal-more__subtitle">Что потребуется от заказчика:</h4>
+					<h4 className="modal-more__subtitle">Что потребуется от заказчика при заказе на выезд:</h4>
 					{masterClass.required.map((item, index) =>
 						<li key={index} className="modal-more__item">{item}</li>
 					)}

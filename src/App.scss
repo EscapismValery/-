@@ -41,10 +41,29 @@ body {
 	will-change: transform;
 }
 .slider__item {
+	position: relative;
 	height: 85vh;
 	overflow: hidden;
 	cursor: pointer;
 	transition: transform var(--transition), box-shadow var(--transition);
+}
+.slider__item p {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	padding: 20px 50% 20px 20px;
+	width: 150%;
+	height: 20%;
+	@include adaptive('font-size', 40, 20, 'px');
+	@include adaptive('line-height', 40, 20, 'px');
+	font-weight: 900;
+	background-color: rgba(0,0,0,0.3);;
+	color: rgba(255,255,255);
+	transition: all var(--transition);
+	text-transform: uppercase;
 }
 .slider__img {
 	width: 150%;
@@ -56,18 +75,7 @@ body {
 	transition: var(--transition) !important;
 	will-change: transform;
 }
-.slider__img p {
-	display: flex;
-	padding: 20px 0 0 25%;
-	width: 60%;
-	@include adaptive('font-size', 50, 25, 'px');
-	@include adaptive('line-height', 50, 25, 'px');
-	font-weight: 900;
-	color: rgba(255,255,255,0.6);
-	transition: all var(--transition);
-	text-transform: uppercase;
-}
-.slider__img:hover p {
+.slider__item:hover p {
 	color: #fff;
 	text-shadow: 0px 0px 10px #fff;
 }
@@ -89,71 +97,121 @@ body {
 	z-index: 2;
 	box-shadow: rgb(0 0 0 / 0.75) 0 0 0 10000px;
 }
-
+//----------------------------------------------------------------------------------------------
 .description {
 	position: absolute;
 	@include adaptive('font-size', 23, 2, 'px');
-	top: 15vh;
+	@include adaptive('line-height', 27, 6, 'px');
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	top: 0px;
 	left: 8vw;
 	max-width: 24vw;
 	transition: opacity var(--transition), transform var(--transition);
-}
-.logo {
-	@include adaptive('font-size', 69, 2, 'px');
-	@include adaptive('line-height', 69, 2, 'px');
-	@include adaptive('margin-bottom', 30, 20, 'px');
-	font-weight: 900;
-	display: inline-block;
-	background: linear-gradient(45deg, #C08E45, #8b0000, #d2b48c);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
-}
-.description p {
-	opacity: 0.9;
-	transition: transform var(--transition);
-	transition-duration: 3s;
-	color: #ffe4c4;
-	font-weight: 500;
+	&__mainlogo {
+		@include adaptive('font-size', 25, 16, 'px');
+		@include adaptive('line-height', 25, 16, 'px');
+		font-weight: 900;
+		color: rgba(255,255,255,0.1);
+		text-transform: uppercase;
+		@include adaptive('margin-bottom', 25, 16, 'px');
+	}
+	&__logo {
+		@include adaptive('font-size', 69, 2, 'px');
+		@include adaptive('line-height', 69, 2, 'px');
+		@include adaptive('margin-bottom', 30, 20, 'px');
+		font-weight: 900;
+		display: inline-block;
+		background: linear-gradient(45deg, #C08E45, #8b0000, #d2b48c);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+	&__text {
+		opacity: 0.9;
+		transition: transform var(--transition);
+		transition-duration: 3s;
+		color: #ffe4c4;
+		font-weight: 500;
+	}
 }
 .newyear {
-	display: flex;
-	align-items: center;
-	@include adaptive('gap', 20, 8, 'px');
-	color: #ffe4c4;
-	margin: 5px 0;
-}
-.santa {
-	background: url("./images/santa.png") no-repeat 0% 50%;
-	background-size: 100%;
-	@include adaptive('width', 150, 50, 'px');
-	@include adaptive('height', 150, 50, 'px');
-	animation: santa 5s linear infinite;
-}
-.description .dad {
-	font-size: 0.8em;
-}
-.description span {
-	font-weight: 700;
-	font-size: 1.2em;
-	text-transform: uppercase;
-}
-.description.hidden {
-	opacity: 0;
-	transform: translateY(5vh);
-}
-.description.hidden p {
-	transform: translateY(2vh);
-}
-.description.hidden .dad {
-	transform: translateY(10vh);
-}
-.contacts {
 	position: absolute;
-	@include adaptive('top', 60, 20, 'px');
-	right: 7vw;
+	@include adaptive('bottom', 30, 10, 'px');
+	width: 20vw;
+	left: -50vw;
 	display: flex;
 	align-items: center;
 	@include adaptive('gap', 20, 10, 'px');
+	transition: left var(--transition);
+	will-change: left;
+	&__santa {
+		background: url("./images/santa.png") no-repeat 0% 50%;
+		background-size: 100%;
+		@include adaptive('width', 100, 50, 'px');
+		@include adaptive('height', 100, 50, 'px');
+		animation: santa 5s linear infinite;
+	}
+	&__text {
+		@include adaptive('font-size', 23, 2, 'px');
+		@include adaptive('line-height', 27, 6, 'px');
+		width: 90%;
+	}
+	&__button {
+		@include adaptive('padding-top', 20, 10, 'px');
+		@include adaptive('padding-bottom', 20, 10, 'px');
+		@include adaptive('padding-left', 40, 20, 'px');
+		@include adaptive('padding-right', 40, 20, 'px');
+		@include adaptive('font-size', 18, 12, 'px');
+		font-weight: 600;
+		width: 90%;
+		z-index: 2;
+		background: #ffe4c4;
+		border: 1px solid #ffe4c4;
+		border-radius: 50px;
+		font-family: raleway_m, sans-serif;
+		color: #B71B1C;
+		text-decoration: none;
+		animation: buttons 5s linear infinite;
+		transition: all var(--transition);
+		cursor: pointer;
+	}
+	&__button:hover {
+		background: #B71B1C;
+		border: 1px solid #B71B1C;
+		color: #ffe4c4;
+	}
+}
+
+.description.hidden {
+	opacity: 0;
+	transform: translateY(5vh);
+	.logo {
+		opacity: 0;
+	}
+	&__text {
+		opacity: 0;
+		transform: translateY(2vh);
+	}
+	& ~ .newyear {
+		left: 2vw;
+	}
+	& ~ .contacts {
+		right: 7vw;
+	}
+}
+
+//--------------------------------------------------------------------------------------
+.contacts {
+	position: absolute;
+	@include adaptive('top', 60, 20, 'px');
+	right: -50vw;
+	display: flex;
+	align-items: center;
+	@include adaptive('gap', 20, 10, 'px');
+	transition: right var(--transition);
+	will-change: right;
 }
 .button {
 	@include adaptive('padding-top', 20, 10, 'px');
@@ -170,7 +228,6 @@ body {
 	line-height: 1;
 	cursor: pointer;
 	transition: all var(--transition);
-	animation: buttons 5s linear infinite;
 }
 .button:hover {
 	@include adaptive('padding-left', 60, 30, 'px');
@@ -182,7 +239,6 @@ body {
 	@include adaptive('font-size', 20, 12, 'px');
 	text-decoration: none;
 	transition: all var(--transition);
-	animation: phone 5s linear infinite;
 }
 .phone:hover {
 	letter-spacing: 2px;
