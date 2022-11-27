@@ -41,7 +41,6 @@ body {
 	will-change: transform;
 }
 .slider__item {
-	position: relative;
 	height: 85vh;
 	overflow: hidden;
 	cursor: pointer;
@@ -54,7 +53,9 @@ body {
 	left: 0;
 	display: flex;
 	align-items: center;
-	padding: 20px 50% 20px 20px;
+	justify-content: center;
+	text-align: center;
+	padding: 20px 55% 20px 20px;
 	width: 150%;
 	height: 20%;
 	@include adaptive('font-size', 40, 20, 'px');
@@ -102,13 +103,13 @@ body {
 	position: absolute;
 	@include adaptive('font-size', 23, 2, 'px');
 	@include adaptive('line-height', 27, 6, 'px');
-	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	top: 0px;
 	left: 8vw;
 	max-width: 24vw;
+	height: 100vh;
 	transition: opacity var(--transition), transform var(--transition);
 	&__mainlogo {
 		@include adaptive('font-size', 25, 16, 'px');
