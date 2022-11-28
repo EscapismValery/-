@@ -101,7 +101,7 @@ body {
 //----------------------------------------------------------------------------------------------
 .description {
 	position: absolute;
-	@include adaptive('font-size', 23, 2, 'px');
+	@include adaptive('font-size', 30, 2, 'px');
 	@include adaptive('line-height', 27, 6, 'px');
 	display: flex;
 	flex-direction: column;
@@ -111,6 +111,7 @@ body {
 	max-width: 24vw;
 	height: 100vh;
 	transition: opacity var(--transition), transform var(--transition);
+	will-change: transform, opacity;
 	&__mainlogo {
 		@include adaptive('font-size', 25, 16, 'px');
 		@include adaptive('line-height', 25, 16, 'px');
@@ -128,6 +129,11 @@ body {
 		background: linear-gradient(45deg, #C08E45, #8b0000, #d2b48c);
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
+		& span {
+			background: #fff;
+			-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		}
 	}
 	&__text {
 		opacity: 0.9;
@@ -135,18 +141,23 @@ body {
 		transition-duration: 3s;
 		color: #ffe4c4;
 		font-weight: 500;
+		display: flex;
+		flex-direction: column;
+		padding-left: 20px;
+		@include adaptive('gap', 8, 5, 'px');
 	}
 }
 .newyear {
 	position: absolute;
 	@include adaptive('bottom', 30, 10, 'px');
 	width: 20vw;
-	left: -50vw;
+	left: 2vw;
 	display: flex;
 	align-items: center;
+	opacity: 0;
 	@include adaptive('gap', 20, 10, 'px');
-	transition: left var(--transition);
-	will-change: left;
+	transition: opacity var(--transition);
+	will-change: opacity;
 	&__santa {
 		background: url("./images/santa.png") no-repeat 0% 50%;
 		background-size: 100%;
@@ -196,10 +207,10 @@ body {
 		transform: translateY(2vh);
 	}
 	& ~ .newyear {
-		left: 2vw;
+		opacity: 1;
 	}
 	& ~ .contacts {
-		right: 7vw;
+		opacity: 1;
 	}
 }
 
@@ -207,12 +218,13 @@ body {
 .contacts {
 	position: absolute;
 	@include adaptive('top', 60, 20, 'px');
-	right: -50vw;
+	right: 7vw;
 	display: flex;
 	align-items: center;
+	opacity: 0;
 	@include adaptive('gap', 20, 10, 'px');
-	transition: right var(--transition);
-	will-change: right;
+	transition: opacity var(--transition);
+	will-change: opacity;
 }
 .button {
 	@include adaptive('padding-top', 20, 10, 'px');

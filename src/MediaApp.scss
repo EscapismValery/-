@@ -1,13 +1,13 @@
 @import "./mixins.scss";
 @media screen and (max-width: 767px) {
 	.slider {
-		@include adaptive('top', 150, 300, 'px');
+		@include adaptive('top', 150, 340, 'px');
 		margin: 0 10vw;
 		height: 60%;
 		transition: top var(--transition);
 		transform: rotate(0deg);
 		@media screen and (max-width: 540px) {
-			@include adaptive('top', 150, 240, 'px');
+			@include adaptive('top', 150, 270, 'px');
 		}
 	}
 	.description.hidden ~ .slider {
@@ -56,8 +56,7 @@
 		transition: opacity var(--transition), transform var(--transition);
 		max-width: 80vw;
 		height: auto;
-		@include adaptive('font-size', 23, 14, 'px');
-		will-change: transform, opacity;
+		@include adaptive('font-size', 23, 16, 'px');
 		&__logo {
 			@include adaptive('font-size', 69, 16, 'px');
 			@include adaptive('line-height', 69, 16, 'px');
@@ -66,7 +65,7 @@
 		}
 		&__text {
 			font-weight: 500;
-			line-height: 1.3em;
+			line-height: 1.1em;
 		}
 	}
 	.newyear {

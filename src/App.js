@@ -93,7 +93,7 @@ function App() {
 				}}
 			>
 				<div className='slider__wrapper swiper-wrapper'>
-					<SwiperSlide className='slider__item' onClick={() => {
+					{/* <SwiperSlide className='slider__item' onClick={() => {
 						setSpecialActive(true);
 					}}>
 						<p className='slider__korporat'>Спецпредложение декабрь 2022!</p>
@@ -102,7 +102,7 @@ function App() {
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${special})` }}>
 						</div>
-					</SwiperSlide>
+					</SwiperSlide> */}
 					<SwiperSlide className='slider__item' onClick={() => popup(masterClasses[0])}>
 						<p>{masterClasses[0].title}</p>
 						<div
