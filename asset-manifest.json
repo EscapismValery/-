@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/vkysniymaster/static/css/main.6de95246.css",
+    "main.css": "/vkysniymaster/static/css/main.fbdf14f4.css",
     "main.js": "/vkysniymaster/static/js/main.97d29d44.js",
     "static/media/muffin.jpg": "/vkysniymaster/static/media/muffin.6f91c803b2b5dbba4736.jpg",
     "static/media/korporat.jpg": "/vkysniymaster/static/media/korporat.5861c7fe1e413b17744f.jpg",
@@ -20,11 +20,11 @@
     "static/media/butter.jpg": "/vkysniymaster/static/media/butter.6790ef3630183aff29c1.jpg",
     "static/media/raleway-v22-cyrillic-900.woff2": "/vkysniymaster/static/media/raleway-v22-cyrillic-900.797b5998b7dd5967c115.woff2",
     "index.html": "/vkysniymaster/index.html",
-    "main.6de95246.css.map": "/vkysniymaster/static/css/main.6de95246.css.map",
+    "main.fbdf14f4.css.map": "/vkysniymaster/static/css/main.fbdf14f4.css.map",
     "main.97d29d44.js.map": "/vkysniymaster/static/js/main.97d29d44.js.map"
   },
   "entrypoints": [
-    "static/css/main.6de95246.css",
+    "static/css/main.fbdf14f4.css",
     "static/js/main.97d29d44.js"
   ]
 }
