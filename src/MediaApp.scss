@@ -24,7 +24,7 @@
 		background-position: 50% 100%;
 	}
 	.description.hidden ~ .slider .slider__img {
-		height: calc(60vh + 180 * ((100vh - 360px) / (800 - 360)));
+		height: calc(50vh + 180 * ((100vh - 360px) / (800 - 360)));
 	}
 	.slider__item {
 		height: 85vh;
