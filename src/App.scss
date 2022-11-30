@@ -116,7 +116,7 @@ body {
 		@include adaptive('font-size', 25, 16, 'px');
 		@include adaptive('line-height', 25, 16, 'px');
 		font-weight: 900;
-		color: rgba(255,255,255,0.1);
+		color: #ffe4c4;
 		text-transform: uppercase;
 		@include adaptive('margin-bottom', 25, 16, 'px');
 	}
