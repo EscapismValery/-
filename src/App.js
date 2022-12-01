@@ -63,6 +63,7 @@ function App() {
 	const onModalMore = () => {
 		setMoreActive(true)
 	}
+	const desc = document.querySelector(".description");
 
 	return (
 		<div className="App">
@@ -71,9 +72,7 @@ function App() {
 			<Swiper className="slider"
 				modules={[Mousewheel, Parallax, FreeMode, Controller]}
 				controller={{ control: controlledSwiper }}
-				// onSlideChange={(e) => e.activeIndex > 0 ? desc.classList.add("hidden") : desc.classList.remove("hidden")}
-				// onTouchStart={(e) => handleTouchStart(e)}
-				// onTouchMove={(e) => handleTouchMove(e)}
+				onSlideChange={(e) => e.activeIndex > 0 ? desc.classList.add("hidden") : desc.classList.remove("hidden")}
 				allowTouchMove={true}
 				freeMode={true} // листать слайдер без привязки к конкретной позиции
 				centeredSlides={true} // первый слайд будет находиться в центре
@@ -87,7 +86,7 @@ function App() {
 					},
 					760: { // от 680
 						slidesPerView: 3.5, // количество слайдов на 1 странице
-						spaceBetween: 20 // расстояние между слайдами
+						spaceBetween: 20, // расстояние между слайдами
 					},
 					1020: { // от 680
 						slidesPerView: 3.5, // количество слайдов на 1 странице

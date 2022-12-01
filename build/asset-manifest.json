@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vkysniymaster/static/css/main.70de88a3.css",
-    "main.js": "/vkysniymaster/static/js/main.4e4fd984.js",
+    "main.css": "/vkysniymaster/static/css/main.1c4fec37.css",
+    "main.js": "/vkysniymaster/static/js/main.78d6402f.js",
     "static/media/muffin.jpg": "/vkysniymaster/static/media/muffin.6f91c803b2b5dbba4736.jpg",
     "static/media/korporat.jpg": "/vkysniymaster/static/media/korporat.5861c7fe1e413b17744f.jpg",
     "static/media/gingerbread.jpg": "/vkysniymaster/static/media/gingerbread.7e7352c92fb4964aae96.jpg",
@@ -19,11 +19,11 @@
     "static/media/butter.jpg": "/vkysniymaster/static/media/butter.6790ef3630183aff29c1.jpg",
     "static/media/raleway-v22-cyrillic-900.woff2": "/vkysniymaster/static/media/raleway-v22-cyrillic-900.797b5998b7dd5967c115.woff2",
     "index.html": "/vkysniymaster/index.html",
-    "main.70de88a3.css.map": "/vkysniymaster/static/css/main.70de88a3.css.map",
-    "main.4e4fd984.js.map": "/vkysniymaster/static/js/main.4e4fd984.js.map"
+    "main.1c4fec37.css.map": "/vkysniymaster/static/css/main.1c4fec37.css.map",
+    "main.78d6402f.js.map": "/vkysniymaster/static/js/main.78d6402f.js.map"
   },
   "entrypoints": [
-    "static/css/main.70de88a3.css",
-    "static/js/main.4e4fd984.js"
+    "static/css/main.1c4fec37.css",
+    "static/js/main.78d6402f.js"
   ]
 }
