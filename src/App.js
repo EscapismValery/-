@@ -2,11 +2,13 @@ import { Mousewheel, Parallax, FreeMode, Controller } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import React, { useState } from 'react';
 import { masterClasses } from './js/mk.js'
+import { swipe } from './js/swipe.js';
+
 import 'swiper/css';
 import './App.scss';
 import './MediaApp.scss';
 
-import special from './images/mk/special.jpg';
+// import special from './images/mk/special.jpg';
 import kishLoren from './images/mk/kish-loren.jpg';
 import craftCookie from './images/mk/craft-cookie.jpg';
 import lolipops from './images/mk/lolipops.jpg';
@@ -43,7 +45,6 @@ function App() {
 		required: [],
 		nuances: [],
 	})
-	const desc = document.querySelector(".description");
 
 	const popup = (desc) => {
 		setModalActive(true)
@@ -63,8 +64,6 @@ function App() {
 		setMoreActive(true)
 	}
 
-
-
 	return (
 		<div className="App">
 			<DescriptionMain />
@@ -72,7 +71,9 @@ function App() {
 			<Swiper className="slider"
 				modules={[Mousewheel, Parallax, FreeMode, Controller]}
 				controller={{ control: controlledSwiper }}
-				onSlideChange={(e) => e.activeIndex > 0 ? desc.classList.add("hidden") : desc.classList.remove("hidden")}
+				// onSlideChange={(e) => e.activeIndex > 0 ? desc.classList.add("hidden") : desc.classList.remove("hidden")}
+				// onTouchStart={(e) => handleTouchStart(e)}
+				// onTouchMove={(e) => handleTouchMove(e)}
 				allowTouchMove={true}
 				freeMode={true} // листать слайдер без привязки к конкретной позиции
 				centeredSlides={true} // первый слайд будет находиться в центре
@@ -208,9 +209,6 @@ function App() {
 							data-swiper-parallax="30%"
 							style={{ backgroundImage: `url(${korporat})` }}>
 						</div>
-					</SwiperSlide>
-					<SwiperSlide className='slider__item'>
-
 					</SwiperSlide>
 				</div>
 			</Swiper>
@@ -354,6 +352,7 @@ function App() {
 					</a>
 				</div>
 			</Modal>
+			{setTimeout(swipe, 100)}
 		</div >
 	);
 }

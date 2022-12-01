@@ -12,7 +12,6 @@
 	}
 	.description.hidden ~ .slider {
 		@include adaptive('top', 150, 120, 'px');
-		left: 35vw;
 		height: 20%;
 	}
 	.description.hidden ~ .slider-bg {
@@ -20,7 +19,7 @@
 		left: -5vh;
 	}
 	.slider__img {
-		width: 120%;
+		width: 130%;
 		background-position: 50% 100%;
 	}
 	.description.hidden ~ .slider .slider__img {
