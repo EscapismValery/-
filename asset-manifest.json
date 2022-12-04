@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/vkysniymaster/static/css/main.1c4fec37.css",
-    "main.js": "/vkysniymaster/static/js/main.78d6402f.js",
+    "main.css": "/vkysniymaster/static/css/main.6f4b389d.css",
+    "main.js": "/vkysniymaster/static/js/main.a779cdb4.js",
     "static/media/muffin.jpg": "/vkysniymaster/static/media/muffin.6f91c803b2b5dbba4736.jpg",
+    "static/media/elka3d.jpg": "/vkysniymaster/static/media/elka3d.81f2a323d07de6bd780c.jpg",
     "static/media/korporat.jpg": "/vkysniymaster/static/media/korporat.5861c7fe1e413b17744f.jpg",
     "static/media/gingerbread.jpg": "/vkysniymaster/static/media/gingerbread.7e7352c92fb4964aae96.jpg",
     "static/media/craft-cookie.jpg": "/vkysniymaster/static/media/craft-cookie.59dbc13b962c838bbd65.jpg",
@@ -10,6 +11,7 @@
     "static/media/santa.png": "/vkysniymaster/static/media/santa.b002f703c1ee53882b27.png",
     "static/media/house.jpg": "/vkysniymaster/static/media/house.3f4a200459e597300abe.jpg",
     "static/media/choco.jpg": "/vkysniymaster/static/media/choco.626651f1ac8141ef06ad.jpg",
+    "static/media/special.jpg": "/vkysniymaster/static/media/special.4bd20ce773f359bd4f4f.jpg",
     "static/media/cake-pops.jpg": "/vkysniymaster/static/media/cake-pops.8851aa0e8fea73db7c17.jpg",
     "static/media/ice-cream.jpg": "/vkysniymaster/static/media/ice-cream.909f4b740c243e6208ad.jpg",
     "static/media/cotton-candy.jpg": "/vkysniymaster/static/media/cotton-candy.cce4beb7ac7e226408e6.jpg",
@@ -19,11 +21,11 @@
     "static/media/butter.jpg": "/vkysniymaster/static/media/butter.6790ef3630183aff29c1.jpg",
     "static/media/raleway-v22-cyrillic-900.woff2": "/vkysniymaster/static/media/raleway-v22-cyrillic-900.797b5998b7dd5967c115.woff2",
     "index.html": "/vkysniymaster/index.html",
-    "main.1c4fec37.css.map": "/vkysniymaster/static/css/main.1c4fec37.css.map",
-    "main.78d6402f.js.map": "/vkysniymaster/static/js/main.78d6402f.js.map"
+    "main.6f4b389d.css.map": "/vkysniymaster/static/css/main.6f4b389d.css.map",
+    "main.a779cdb4.js.map": "/vkysniymaster/static/js/main.a779cdb4.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c4fec37.css",
-    "static/js/main.78d6402f.js"
+    "static/css/main.6f4b389d.css",
+    "static/js/main.a779cdb4.js"
   ]
 }
