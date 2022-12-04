@@ -380,7 +380,7 @@ function App() {
 				<div className="modal__buttons">
 					<a
 						className='modal__button'
-						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+ФИТНЕС-ШУМИХУ!"
+						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+новогоднюю-программу!"
 						target="_blank"
 						rel="noreferrer">
 						Заказать <br />Новогоднюю программу!
