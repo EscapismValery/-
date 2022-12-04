@@ -61,10 +61,15 @@ body {
 	@include adaptive('font-size', 40, 20, 'px');
 	@include adaptive('line-height', 40, 20, 'px');
 	font-weight: 900;
-	background-color: rgba(0,0,0,0.3);;
+	background-color: rgba(0,0,0,0.3);
 	color: rgba(255,255,255);
 	transition: all var(--transition);
 	text-transform: uppercase;
+}
+.slider__item p.spec {
+	background: linear-gradient(-120deg, rgba(255, 0, 0, 0.3) 50%, rgba(0, 255, 0, 0.3));
+	@include adaptive('font-size', 30, 20, 'px');
+	@include adaptive('line-height', 30, 20, 'px');
 }
 .slider__img {
 	width: 150%;

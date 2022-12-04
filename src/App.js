@@ -8,7 +8,8 @@ import 'swiper/css';
 import './App.scss';
 import './MediaApp.scss';
 
-// import special from './images/mk/special.jpg';
+import elka from './images/mk/elka3d.jpg';
+import special from './images/mk/special.jpg';
 import kishLoren from './images/mk/kish-loren.jpg';
 import craftCookie from './images/mk/craft-cookie.jpg';
 import lolipops from './images/mk/lolipops.jpg';
@@ -33,6 +34,7 @@ function App() {
 	const [modalActive, setModalActive] = useState(false);
 	const [moreActive, setMoreActive] = useState(false);
 	const [specialActive, setSpecialActive] = useState(false);
+	const [fitnesActive, setFitnesActive] = useState(false);
 	const [masterClass, setMasterClass] = useState({
 		title: "",
 		minDescription: "",
@@ -95,16 +97,26 @@ function App() {
 				}}
 			>
 				<div className='slider__wrapper swiper-wrapper'>
-					{/* <SwiperSlide className='slider__item' onClick={() => {
+					<SwiperSlide className='slider__item' onClick={() => {
 						setSpecialActive(true);
 					}}>
-						<p className='slider__korporat'>Спецпредложение декабрь 2022!</p>
+						<p className='slider__korporat spec'>Новогодняя программа "Создай свой 3D дом!"</p>
+						<div
+							className="slider__img"
+							data-swiper-parallax="20%"
+							style={{ backgroundImage: `url(${elka})` }}>
+						</div>
+					</SwiperSlide>
+					<SwiperSlide className='slider__item' onClick={() => {
+						setFitnesActive(true);
+					}}>
+						<p className='slider__korporat spec'>Фитнес-шумиха! Отметь свой День Рождения!</p>
 						<div
 							className="slider__img"
 							data-swiper-parallax="20%"
 							style={{ backgroundImage: `url(${special})` }}>
 						</div>
-					</SwiperSlide> */}
+					</SwiperSlide>
 					<SwiperSlide className='slider__item' onClick={() => popup(masterClasses[0])}>
 						<p>{masterClasses[0].title}</p>
 						<div
@@ -329,25 +341,49 @@ function App() {
 					)}
 				</ol>
 			</Modal>}
-			<Modal active={specialActive} setActive={setSpecialActive}>
+			<Modal active={fitnesActive} setActive={setFitnesActive}>
 				<ol style={{ padding: "20px 20px 0 20px" }}>
-					<li>Отметчай свой День рождения "По-спортивному" !!! </li>
-					<li>3-х часовая увлекательная программа детского праздника в World Class;</li>
-					<li>Собирай команду 15 человек;</li>
-					<li>Приглашай на Красноармейскую 64;</li>
-					<li>Погружайся в мастер-класс по по приготовлению правильных перекусов, быстрых смузи, и полезных десертов;</li>
-					<li>Участвуй в познавательном квесте;</li>
-					<li>Устрой соревнования на "татами";</li>
-					<li>Получай подарки и незабыванмые впечатления;</li>
+					<li>Отметчай свой День рождения "По-спортивному"!!! </li>
+					<li>3-х часовая увлекательная программа детского праздника в World Class</li>
+					<li>Собирай команду 15 человек</li>
+					<li>Приглашай на Красноармейскую 64</li>
+					<li>Погружайся в мастер-класс по по приготовлению правильных перекусов, быстрых смузи, и полезных десертов</li>
+					<li>Участвуй в познавательном квесте</li>
+					<li>Устрой соревнования на "татами"</li>
+					<li>Получай подарки и незабыванмые впечатления</li>
 					<li>Взрослые скучать не будут!</li>
 				</ol>
 				<div className="modal__buttons">
 					<a
 						className='modal__button'
-						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+спецпредложение+на+День+рождения!"
+						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+ФИТНЕС-ШУМИХУ!"
 						target="_blank"
 						rel="noreferrer">
-						Заказать День рождения!
+						Заказать <br />ФИТНЕС-ШУМИХУ!
+					</a>
+				</div>
+			</Modal>
+			<Modal active={specialActive} setActive={setSpecialActive}>
+				<ol style={{ padding: "20px 20px 0 20px" }}>
+					<li>Новогодняя программа "Создай свой 3D дом!"</li>
+					<li>Пригласительный для Вас на новогодний праздник.</li>
+					<li>Приходите с семьей и друзьями.</li>
+					<li>Программа на 2,5 часа.</li>
+					<li>Погружаемся во вкусный мастер-класс, создаем  пряничную 3D композицию,
+						а также устроим чаепитие с печеньем и кексами, которые попутно сотворим.</li>
+					<li>Нас поздравит Дед Мороз, если не отморозит нос)</li>
+					<li>Да, кстати, Билетов мало, не пропусти!</li><br />
+					17.12.2022 в 13-00, 17-00 Красноармейская, 64.
+					Worldclass-foodzone.
+					Стоимость для 2х персон - 1500 рублей.
+				</ol>
+				<div className="modal__buttons">
+					<a
+						className='modal__button'
+						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+ФИТНЕС-ШУМИХУ!"
+						target="_blank"
+						rel="noreferrer">
+						Заказать <br />Новогоднюю программу!
 					</a>
 				</div>
 			</Modal>
