@@ -101,7 +101,7 @@
 	color: #d2b48c;
 	text-decoration: none;
 	@include adaptive('font-size', 27, 2, 'px');
-	@include adaptive('line-height', 52, 4, 'px');
+	@include adaptive('line-height', 27, 2, 'px');
 	transition: background var(--transition);
 	cursor: pointer;
 }
