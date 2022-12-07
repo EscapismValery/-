@@ -100,7 +100,7 @@ function App() {
 					<SwiperSlide className='slider__item' onClick={() => {
 						setSpecialActive(true);
 					}}>
-						<p className='slider__korporat spec'>Новогодняя программа "Создай свой 3D дом!"</p>
+						<p className='slider__korporat spec'>Новогодняя программа "Создай свою 3D композицию!"</p>
 						<div
 							className="slider__img"
 							data-swiper-parallax="20%"
@@ -365,7 +365,7 @@ function App() {
 			</Modal>
 			<Modal active={specialActive} setActive={setSpecialActive}>
 				<ol style={{ padding: "20px 20px 0 20px" }}>
-					<li>Новогодняя программа "Создай свой 3D дом!"</li>
+					<li>Новогодняя программа "Создай свою 3D композицию!"</li>
 					<li>Пригласительный для Вас на новогодний праздник.</li>
 					<li>Приходите с семьей и друзьями.</li>
 					<li>Программа на 2,5 часа.</li>

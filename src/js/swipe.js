@@ -1,7 +1,8 @@
 export function swipe() {
 	const desc = document.querySelector(".description");
-	document.addEventListener('touchstart', handleTouchStart, false);
-	document.addEventListener('touchmove', handleTouchMove, false);
+	const slider = document.querySelector(".slider");
+	slider.addEventListener('touchstart', handleTouchStart, false);
+	slider.addEventListener('touchmove', handleTouchMove, false);
 	let x1 = null;
 	let y1 = null;
 	function handleTouchStart(e) {
