@@ -67,7 +67,7 @@ body {
 	text-transform: uppercase;
 }
 .slider__item p.spec {
-	background: linear-gradient(-120deg, rgba(255, 0, 0, 0.3) 50%, rgba(0, 255, 0, 0.3));
+	background: #391b0792;
 	@include adaptive('font-size', 30, 20, 'px');
 	@include adaptive('line-height', 30, 20, 'px');
 }
