@@ -8,7 +8,8 @@ import 'swiper/css';
 import './App.scss';
 import './MediaApp.scss';
 
-import elka from './images/mk/elka3d.jpg';
+import mart8 from './images/mk/8mart.jpeg';
+// import elka from './images/mk/elka3d.jpg';
 import special from './images/mk/special.jpg';
 import kishLoren from './images/mk/kish-loren.jpg';
 import craftCookie from './images/mk/craft-cookie.jpg';
@@ -27,7 +28,7 @@ import korporat from './images/mk/korporat.jpg';
 import Modal from './modal/Modal';
 import DescriptionMain from './components/DescriptionMain.jsx';
 import Contacts from './components/Contacts.jsx';
-import NewYear from './components/NewYear.jsx';
+// import NewYear from './components/NewYear.jsx';
 
 function App() {
 	const [controlledSwiper, setControlledSwiper] = useState(null);
@@ -100,11 +101,11 @@ function App() {
 					<SwiperSlide className='slider__item' onClick={() => {
 						setSpecialActive(true);
 					}}>
-						<p className='slider__korporat spec'>Новогодняя программа "Создай свою 3D композицию!"</p>
+						<p className='slider__korporat spec'>Праздничная программа "Создай свою 3D композицию!"</p>
 						<div
 							className="slider__img"
 							data-swiper-parallax="20%"
-							style={{ backgroundImage: `url(${elka})` }}>
+							style={{ backgroundImage: `url(${mart8})` }}>
 						</div>
 					</SwiperSlide>
 					<SwiperSlide className='slider__item' onClick={() => {
@@ -289,7 +290,7 @@ function App() {
 			</Swiper>
 
 			<Contacts />
-			<NewYear />
+			{/* <NewYear /> */}
 
 			<Modal active={modalActive} setActive={setModalActive}>
 				<h3 className="modal__title">{masterClass.title}</h3>
@@ -365,25 +366,23 @@ function App() {
 			</Modal>
 			<Modal active={specialActive} setActive={setSpecialActive}>
 				<ol style={{ padding: "20px 20px 0 20px" }}>
-					<li>Новогодняя программа "Создай свою 3D композицию!"</li>
-					<li>Пригласительный для Вас на новогодний праздник.</li>
-					<li>Приходите с семьей и друзьями.</li>
+					<li>Праздничная программа "Создай свою 3D композицию!"</li>
+					<li>Приглашайте любимых дам, мам, бабушек, сестёр, подруг, коллег, устройте праздник для дочерей или любых других прекрасных особ!</li>
+					<li>Приходите с семьёй, друзьями или коллегами!</li>
 					<li>Программа на 2,5 часа.</li>
-					<li>Погружаемся во вкусный мастер-класс, создаем  пряничную 3D композицию,
-						а также устроим чаепитие с печеньем и кексами, которые попутно сотворим.</li>
-					<li>Нас поздравит Дед Мороз, если не отморозит нос)</li>
-					<li>Да, кстати, Билетов мало, не пропусти!</li><br />
-					17.12.2022 в 13-00, 17-00 Красноармейская, 64.
-					Worldclass-foodzone.
-					Стоимость для 2х персон - 1500 рублей.
+					<li>Погружаемся во вкусный Мастер класс, создаём пряничную 3D композицию, декорируем глазурной росписью, а также устроим чаепитие!</li>
+					<li>Нас порадует живая музыка и голос, вечер завершит праздничный концерт!</li>
+					<li>Да, кстати, билетов мало, не пропусти!</li><br />
+
+					Стоимость для 2-ух персон - 1500₽.
 				</ol>
 				<div className="modal__buttons">
 					<a
 						className='modal__button'
-						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+новогоднюю-программу!"
+						href="https://wa.me/79126164068?text=Здравствуйте%2C+Хочу+заказать+праздничную+программу!"
 						target="_blank"
 						rel="noreferrer">
-						Заказать <br />Новогоднюю программу!
+						Заказать <br />Праздничную программу!
 					</a>
 				</div>
 			</Modal>
