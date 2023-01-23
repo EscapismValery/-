@@ -8,7 +8,7 @@ import 'swiper/css';
 import './App.scss';
 import './MediaApp.scss';
 
-import mart8 from './images/mk/8mart.jpeg';
+import mart8 from './images/mk/8mart.jpg';
 // import elka from './images/mk/elka3d.jpg';
 import special from './images/mk/special.jpg';
 import kishLoren from './images/mk/kish-loren.jpg';
@@ -374,7 +374,7 @@ function App() {
 					<li>Нас порадует живая музыка и голос, вечер завершит праздничный концерт!</li>
 					<li>Да, кстати, билетов мало, не пропусти!</li><br />
 
-					Стоимость для 2-ух персон - 1500₽.
+					Стоимость для одной персоны - 750₽.
 				</ol>
 				<div className="modal__buttons">
 					<a
